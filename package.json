@@ -1,0 +1,22 @@
+{
+  "name": "craftmyslef",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/api",
+    "apps/web",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "sh -c 'npm --workspace apps/api run dev & npm --workspace apps/web run start & wait'",
+    "dev:api": "npm --workspace apps/api run dev",
+    "dev:web": "npm --workspace apps/web run start",
+    "build": "npm --workspace apps/api run build && npm --workspace apps/web run build",
+    "build:api": "npm --workspace apps/api run build",
+    "build:web": "npm --workspace apps/web run build",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down",
+    "backup": "bash scripts/backup.sh",
+    "restore": "bash scripts/restore.sh"
+  }
+}
